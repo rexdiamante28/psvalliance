@@ -1,0 +1,47 @@
+<odoo>
+	<data>
+
+		<record model="ir.actions.act_window" id="subscribers_action">
+            <field name="name">Subscribers</field>
+            <field name="res_model">psvalliance.subscribers</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Create Subscribers</p>
+            </field>
+        </record>
+
+
+     	<record model="ir.ui.view" id="psvalliance_form_view">
+            <field name="name">subscribers.form</field>
+            <field name="model">psvalliance.subscribers</field>
+            <field name="arch" type="xml">
+                <form string="Subscribers Form">
+                    <sheet>
+                        <group>
+                            <field name="name" />
+                            <field name="email" />
+                            <field name="company" />
+                            <field name="contact_number" />
+                            <field name="message" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="psvalliance_tree_view">
+            <field name="name">subscribers.tree</field>
+            <field name="model">psvalliance.subscribers</field>
+            <field name="arch" type="xml">
+               <tree string="Subscribers">
+                    <field name="name" />
+                    <field name="email" />
+                    <field name="company" />
+                    <field name="contact_number" />
+               </tree>
+            </field>
+        </record>
+
+	</data>
+</odoo>

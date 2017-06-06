@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<data>
+
+
+
+    <template id="homepage" name="Home Page">
+        <t t-call="website.layout">
+            <span class="hidden" id="active_link">0,1</span>
+          
+            <div class="white_panel" id="homepage">
+              <div  id='dpo_main_content' class="col-xs-12">
+                  
+                  <div class="row">
+
+                    <div class="col-xs-12 text-center" >
+                      <a><img src="/psvalliance/static/src/img/psv.png" id="center_logo" /></a>
+                  </div>
+
+                  <div class="col-md-7 col-sm-12 col-xs-12" id='sssss'>
+                      <h1 class="lightbluetext bannertext">YOU CONTROL <br/> YOUR DATA</h1>
+                      <h3 id="tagline" class="text-center">
+                        Get protected using <b id="psv_highlight">PSV Alliance</b> and all its features. <br/><br/>
+                        Subscribe Now!
+                      </h3>
+
+                      <form method="post" action="/page/subscribe">
+                         <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                         <div class="col-sm-6">
+                            <div class="form-group">
+                               <input type="text" class="form-control" name="name" placeholder="Name:" />
+                            </div>
+                         </div>
+                         <div class="col-sm-6">
+                            <div class="form-group">
+                               <input type="text" class="form-control" name="email" placeholder="Email:" />
+                            </div>
+                         </div>
+
+                         <div class="col-sm-6">
+                            <div class="form-group">
+                               <input type="text" class="form-control" name="company" placeholder="Company:" />
+                            </div>
+                         </div>
+
+                         <div class="col-sm-6">
+                            <div class="form-group">
+                               <input type="text" class="form-control" name="contact_number" placeholder="Contact Number:" />
+                            </div>
+                         </div>
+                         
+                         <div class="col-xs-12">
+                            <div class="form-group">
+                               <textarea type="text" class="form-control" name="message" placeholder="Message:"></textarea>
+                           </div>
+                           <div class="form-group">
+                               <button type="submit" class="btn btn-block btn-primary " style="background-color: #94133B;">SUBSCRIBE</button>
+                           </div>
+                         </div>
+                      </form>
+                  </div>
+
+                  <div class="col-sm-5">
+                  </div>
+
+                  </div>
+
+              </div>
+              <div class="col-xs-12">
+              </div>
+
+              <div class="aboutus" id="aboutus">
+                  <div class="row">
+                      <div class="col-md-7 col-sm-12 col-xs-12 transpanel">
+                            <h1>About Us</h1>
+
+                            <p>
+                                The PSV alliance is an organization established to assist companies comply with the Philippine Data Privacy Act of 2012. The primary focus of PSV alliance is to determine and monitor the level of adequacy and consistency of the vendor’s privacy and security principles ie outsourcers and third party providers to the policies of the engaging party or principal.
+                            </p>
+
+                            <p>
+                                Outsourcing is becoming to be a globally accepted practice as such providers are considered an extension of companies. As such, there is a responsibility of both third parties and principals  that their privacy and security practices independently and collectively provide adequate protection expected by data subjects.
+                            </p>
+
+                            <p>
+                                PSV alliance with its top security and privacy experts and experience compliance officers, will evaluate vendors based on globally accepted template of questions, perform physical audits. 
+                            </p>
+
+                            <p>
+                                Companies can leverage the results of PSV audit as one of the determinance in determining the most suitable vendor or partner for them.
+                            </p>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="services" id="services">
+                  <div class="row">
+                      <div class="col-md-7 col-sm-12 col-xs-12 transpanel">
+                        <h1>Services</h1>
+
+                        <p>
+                            As vendors are now more and more involved in the companies’ business, it is imperative that they are consistent with the companies security and privacy policies. Otherwise, they pose as the major risk factor to company’s compliance with the DPA.
+                        </p>
+
+                        <p>
+                            When we do business with a vendor, it is not safe to assume we are doing business just with the party under contract. Vendors rely on other parties. If we are to rely on a chain, then all the links must be tested, not just the first link. We must also apply the same standard of testing to all the links, which is why we created this questionnaire.
+                        </p>
+
+                        <h3 class="orangetext">
+                            Approaches Taken
+                        </h3>
+
+                        <ul>
+                            <li>
+                                <p>
+                                  <b>Multi Level Data Risk Based - </b> Not all vendors, based on size, products and services to business can be categorized. The companies need to be assessed based on the risk level they have on the business. The controls and policies of the vendor need to be proportionate to their company’s own risk and the business of their principals. 
+                                </p>
+                            </li>
+
+                            <li>
+                                <p>
+                                  <b> Data-Risk Based - </b> Not all vendors should be held to the same standard. The risk is proportionate to the sensitivity of the data they are accessing (and the volume of data). The controls vendors should have in place must be proportionate to their risk.
+                                </p>
+                            </li>
+
+                            <li>
+                                <p>
+                                  <b>Integrated and Appropriate Security - </b> Great security is not achieved by purchasing a once stop solution. Security is achieved by thinking about security from the start; From the beginning of data flow and process flow. how a data and process is designed, how data and process is tested, how it is patched and maintained, how data is destroyed, what steps have been taken to minimize a breach and what happens during a security incident.
+                                </p>
+                            </li>
+
+                            <li>
+                                <p>
+                                  <b>Compliance Audit  - </b> Security audits to make sure adequate to the services offered and privacy audits to ensure that they have compliance for the RA and also as the agreements and contracts are consistent to the DPA and lastly they 
+                                </p>
+                            </li>
+
+                            <li>
+                                <p>
+                                  <b>Compliance Monitoring - </b> Review of privacy impact assessment for new systems, audit checks and regular registration of compliance requirements. 
+                                </p>
+                            </li>
+                        
+                        </ul>
+                    </div>
+                  </div>
+              </div>
+
+
+
+            </div>
+        </t>
+    </template>
+
+
+    <template id="aboutus" name="About Us">
+        <t t-call="website.layout">
+            <span class="hidden" id="active_link">0,1</span>         
+            <div class="white_panel" id="about_us">
+                 
+              <hr/>                                    
+            </div>
+        </t>
+    </template>
+
+
+    <template id="thankyou" name="Thank You">
+        <t t-call="website.layout">
+            <span class="hidden" id="active_link">0,1</span>
+          
+            <div class="white_panel" id="homepage">
+              <div  id='dpo_main_content' class="col-xs-12">
+                  <div class="col-xs-12" id='sssss'>
+                      <h1 class="lightbluetext bannertext1 text-center">THANK YOU <br/> FOR SUBSCRIBING!</h1>
+                      <h3 id="tagline" class="text-center">
+                          We'll get in touch with you the soonest.
+                      </h3>
+                  </div>
+              </div>                                    
+            </div>
+        </t>
+    </template>
+
+
+
+    <template id="services" name="Services">
+        <t t-call="website.layout">
+            <span class="hidden" id="active_link">0,1</span>
+          
+            <div class="white_panel" id="about_us">
+              <h1 class="title">Services</h1><br/>                              
+              <hr/>                                    
+            </div>
+        </t>
+    </template>
+
+
+    <template id="contactus" name="Contact Us">
+        <t t-call="website.layout">
+            <span class="hidden" id="active_link">0,1</span>
+          
+            <div class="white_panel" id="contactus">
+              <h1 class="title">Contact Us</h1><br/>                              
+
+              <p> <b> This is A Paragraph Contact Us </b> </p>
+
+              <hr/>                                    
+            </div>
+        </t>
+    </template>
+
+
+</data>
+</odoo>  

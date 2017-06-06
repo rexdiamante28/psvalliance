@@ -1,0 +1,153 @@
+
+
+#dpo_main_content{
+	background-image: url('../img/psv_bg.jpg');
+	background-repeat: no-repeat;
+	background-size: 100%;
+	background-attachment: fixed;
+	min-height: 100vh;
+	height: 100vh;
+}
+
+#sssss{
+	
+}
+
+.lightbluetext{
+	color: #F68B20;
+}
+
+#psv_highlight{
+	color: #EF645A;
+}
+
+.bluetext{
+	color: #164AA8;
+}
+
+.bannertext{
+	font-size: 75px;
+	font-weight: 800;
+	text-align: center;
+	line-height: 80%;
+	text-shadow: 2px 2px #393B3F;
+}
+
+.bannertext1{
+	font-size: 75px;
+	font-weight: 800;
+	text-align: center;
+	line-height: 80%;
+	text-shadow: 2px 2px #393B3F;
+}
+
+#transparent_panel{
+	background-color: rgba(255,255,255,.5);
+	padding: 20px;
+	box-shadow: 1px 1px 1px #B1B0B5;
+	border-radius: 5px;
+	margin-top: 30px;
+}
+
+#tagline{
+	line-height: 80% !important;
+	color: #06242F;
+	margin-top: 40px !important;
+	margin-bottom: 30px !important;
+}
+
+#center_logo{
+	width: 200px;
+	max-width: 200px;
+	margin:auto;
+	display: block;
+	margin-bottom: 60px;
+	margin-top: 20px;
+}
+
+.aboutus, .services{
+	padding: 20px;
+}
+
+.aboutus{
+	padding-top: 50px !important;
+}
+
+.services{
+	background-color: #F3E7E9;
+}
+
+.aboutus h1, .services h1{
+	text-align: center;
+	margin-top: 20px;
+	color: #AE1B48;
+	font-weight: 700;
+}
+
+
+
+#services,#aboutus{
+	background-image: url('../img/psv_bg.jpg');
+	background-repeat: no-repeat;
+	background-size: 100%;
+	background-attachment: fixed;
+}
+
+.transpanel{
+	background-color: rgba(255,255,255,.7);
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-o-border-radius: 3px;
+}
+
+.orangetext{
+	color: #F17323;
+	font-weight: 700;
+}
+
+
+
+@media only screen and (max-width: 500px) {
+    .bannertext{
+		font-size: 50px;
+		font-weight: 800;
+		text-align: center;
+	}
+
+	#tagline{
+		line-height: 90% !important;
+		color: black;
+		margin-top: 40px !important;
+		margin-bottom: 30px !important;
+		font-size: 17px;
+		text-align: center;
+	}
+
+	#dpo_main_content{
+		background-image: url('../img/psv_bg.jpg');
+		background-repeat: no-repeat;
+		min-height: 100vh;
+		background-size: 200% 100%;
+		height: auto;
+	}
+
+	.bannertext1{
+		font-size: 30px;
+		font-weight: 800;
+		text-align: center;
+		line-height: 80%;
+		text-shadow: 2px 2px #393B3F;
+		margin-top: 30vh;
+	}
+
+	#services, #aboutus{
+		background-image: url('../img/psv_bg.jpg');
+		background-repeat: no-repeat;
+		min-height: 100vh;
+		background-size: 200% 100%;
+		height: auto;
+		
+	}
+}
+
