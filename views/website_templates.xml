@@ -119,12 +119,6 @@
 
                             <li>
                                 <p>
-                                  <b> Data-Risk Based - </b> Not all vendors should be held to the same standard. The risk is proportionate to the sensitivity of the data they are accessing (and the volume of data). The controls vendors should have in place must be proportionate to their risk.
-                                </p>
-                            </li>
-
-                            <li>
-                                <p>
                                   <b>Integrated and Appropriate Security - </b> Great security is not achieved by purchasing a once stop solution. Security is achieved by thinking about security from the start; From the beginning of data flow and process flow. how a data and process is designed, how data and process is tested, how it is patched and maintained, how data is destroyed, what steps have been taken to minimize a breach and what happens during a security incident.
                                 </p>
                             </li>
