@@ -3,6 +3,12 @@
 <data>
 
 
+    <template id="customlayout" name="custom layout">
+        <h1>Thhis is a custom layout</h1>
+        <main>
+            <t t-raw="0"/>
+        </main>
+    </template>
 
     <template id="homepage" name="Home Page">
         <t t-call="website.layout">
@@ -17,46 +23,67 @@
                       <a><img src="/psvalliance/static/src/img/psv.png" id="center_logo" /></a>
                   </div>
 
-                  <div class="col-md-7 col-sm-12 col-xs-12" id='sssss'>
+                  <div class="col-md-8 col-md-offset-2 col-sm-12 col-xs-12" id='sssss'>
                       <h1 class="lightbluetext bannertext">SECURITY THROUGH COMMUNITY</h1>
                       <h3 id="tagline" class="text-center">
                         <b id="psv_highlight"></b><br/><br/>
-                        Subscribe Now!
+                        Vendor Sign Up
                       </h3>
 
                       <form method="post" action="/page/subscribe">
                          <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
-                         <div class="col-sm-6">
+                         <div class="col-sm-12">
                             <div class="form-group">
-                               <input type="text" class="form-control" name="name" placeholder="Name:" />
-                            </div>
-                         </div>
-                         <div class="col-sm-6">
-                            <div class="form-group">
-                               <input type="text" class="form-control" name="email" placeholder="Email:" />
+                               <input type="text" class="form-control" name="clientId" placeholder="Client ID:" />
                             </div>
                          </div>
 
                          <div class="col-sm-6">
                             <div class="form-group">
-                               <input type="text" class="form-control" name="company" placeholder="Company:" />
+                               <input type="text" class="form-control" name="company" placeholder="Company Name:" />
                             </div>
                          </div>
 
                          <div class="col-sm-6">
                             <div class="form-group">
-                               <input type="text" class="form-control" name="contact_number" placeholder="Contact Number:" />
+                               <input type="text" class="form-control" name="contactPerson" placeholder="Contact Person:" />
+                            </div>
+                         </div>
+                         <div class="col-sm-6">
+                            <div class="form-group">
+                               <input type="text" class="form-control" name="contactNumber" placeholder="Contact Number:" />
+                            </div>
+                         </div>
+
+                         <div class="col-sm-6">
+                            <div class="form-group">
+                               <input type="text" class="form-control" name="emailAddress" placeholder="Email Address:" />
+                            </div>
+                         </div>
+
+                         <div class="col-sm-6">
+                            <div class="form-group">
+                               <input type="text" class="form-control" name="username" placeholder="User Name:" />
+                            </div>
+                         </div>
+
+                         <div class="col-sm-6">
+                            <div class="form-group">
+                               <input type="text" class="form-control" name="password" placeholder="Password:" />
                             </div>
                          </div>
                          
+                         
                          <div class="col-xs-12">
                             <div class="form-group">
-                               <textarea type="text" class="form-control" name="message" placeholder="Message:"></textarea>
+                               <textarea type="text" class="form-control" name="message" placeholder="Address:"></textarea>
                            </div>
                            <div class="form-group">
-                               <button type="submit" class="btn btn-block btn-primary " style="background-color: #94133B;">SUBSCRIBE</button>
+                               <button type="submit" class="btn btn-block btn-primary " style="background-color: #94133B;">SUBMIT</button>
                            </div>
                          </div>
+
+
                       </form>
                   </div>
 
@@ -71,7 +98,7 @@
 
               <div class="aboutus" id="aboutus">
                   <div class="row">
-                      <div class="col-md-7 col-sm-12 col-xs-12 transpanel">
+                      <div class="col-md-12 col-sm-12 col-xs-12 transpanel">
                             <h1>About Us</h1>
 
                             <p>
@@ -95,7 +122,7 @@
 
               <div class="services" id="services">
                   <div class="row">
-                      <div class="col-md-7 col-sm-12 col-xs-12 transpanel">
+                      <div class="col-md-12 col-sm-12 col-xs-12 transpanel">
                         <h1>Services</h1>
 
                         <p>

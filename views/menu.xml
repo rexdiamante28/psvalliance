@@ -20,6 +20,21 @@
                                   sequence="2"
                                   action="subscribers_action" />
 
+
+                  <!--Clients-->
+                        <menuitem id="clients"
+                                  name="Clients"
+                                  parent="general"
+                                  sequence="2"
+                                  action="clients_action" />
+
+                  <!--Clients-->
+                        <menuitem id="vendors"
+                                  name="Vendors"
+                                  parent="general"
+                                  sequence="2"
+                                  action="vendors_action" />
+
                         
 
 

@@ -59,7 +59,7 @@ class psvalliance(http.Controller):
         ##_logger.info('Contact Number: ' + request.params['partner_contactnumber'])
         #_logger.info('Message: ' + request.params['partner_message'])
 
-        #Creation of New Record
+        Creation of New Record
         result = model_psvalliance_subscribers.create({
             'name' : request.params['name'],
             'email': request.params['email'],
@@ -67,7 +67,6 @@ class psvalliance(http.Controller):
             'contact_number': request.params['name'],
             'message': request.params['message']
         })
-
 
 
 

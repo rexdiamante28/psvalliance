@@ -17,10 +17,11 @@ For Clinic Information Maintenance
         'website',
     ],
     'data': [
-        'static/add_css.xml',       
-        'data/website_menu.xml', 
-        'views/website_templates.xml',
+        'static/add_css.xml',   
+        'data/website_menu.xml',
         'views/subscribers.xml',
+        'views/clients.xml',
+        'views/vendors.xml',
         'views/menu.xml',
     ],
     #'demo': [
