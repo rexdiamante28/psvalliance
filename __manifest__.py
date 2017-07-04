@@ -14,13 +14,12 @@ For Clinic Information Maintenance
     'category': 'website',
     'website': 'http://newwaveoffices.com/',
     'depends': [
-        'website',
     ],
     'data': [
-        'static/add_css.xml',       
-        'data/website_menu.xml', 
         'views/website_templates.xml',
         'views/subscribers.xml',
+        'views/clients.xml',
+        'views/vendors.xml',
         'views/menu.xml',
     ],
     #'demo': [

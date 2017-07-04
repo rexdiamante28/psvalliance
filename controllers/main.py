@@ -26,13 +26,20 @@ class psvalliance(http.Controller):
         return request.render("psvalliance.homepage", {})
 
 
-    #Ignore Mo Muna sir Unless I override mo yung Homepage
-    #Overriding Homepage
-    @http.route('/page/homepage', type='http', auth="public", website=True)
-    def homepage(self):
+    @http.route('/page/signup', type='http', auth="public", website=True)
+    def signup(self):
         #env = request.env(context=dict(request.env.context, show_address=True, no_tag_br=True))
         # Render page
-        return request.render("psvalliance.homepage", {})
+        return request.render("psvalliance.signup", {})
+
+
+    #Ignore Mo Muna sir Unless I override mo yung Homepage
+    #Overriding Homepage
+    #@http.route('/page/homepage', type='http', auth="public", website=True)
+    #def homepage(self):
+        #env = request.env(context=dict(request.env.context, show_address=True, no_tag_br=True))
+        # Render page
+        #return request.render("psvalliance.homepage", {})
 
 
     @http.route('/page/contactus', type='http', auth="public", website=True)

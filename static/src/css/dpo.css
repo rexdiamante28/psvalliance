@@ -1,7 +1,7 @@
 
 
 #dpo_main_content{
-	background-image: url('../img/psv_bg.jpg');
+	background-image: url('../img/psv_bgn.jpg');
 	background-repeat: no-repeat;
 	background-size: 100%;
 	background-attachment: fixed;
@@ -10,7 +10,8 @@
 }
 
 #sssss{
-	
+
+	margin-bottom: 20px;
 }
 
 .lightbluetext{
@@ -52,7 +53,7 @@
 #tagline{
 	line-height: 80% !important;
 	color: #06242F;
-	margin-top: 40px !important;
+	margin-top: 10px !important;
 	margin-bottom: 30px !important;
 }
 
@@ -87,7 +88,7 @@
 
 
 #services,#aboutus{
-	background-image: url('../img/psv_bg.jpg');
+	background-image: url('../img/psv_bgn.jpg');
 	background-repeat: no-repeat;
 	background-size: 100%;
 	background-attachment: fixed;
@@ -125,7 +126,7 @@
 	}
 
 	#dpo_main_content{
-		background-image: url('../img/psv_bg.jpg');
+		background-image: url('../img/psv_bgn.jpg');
 		background-repeat: no-repeat;
 		min-height: 100vh;
 		background-size: 200% 100%;
@@ -142,7 +143,7 @@
 	}
 
 	#services, #aboutus{
-		background-image: url('../img/psv_bg.jpg');
+		background-image: url('../img/psv_bgn.jpg');
 		background-repeat: no-repeat;
 		min-height: 100vh;
 		background-size: 200% 100%;
