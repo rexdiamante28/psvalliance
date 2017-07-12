@@ -152,3 +152,8 @@
 	}
 }
 
+.top-20{
+	margin-top: 20px;
+	padding-top: 20px;
+	display: none;
+}

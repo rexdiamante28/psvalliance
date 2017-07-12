@@ -10,6 +10,8 @@
         </main>
     </template>
 
+  
+
     <template id="homepage" name="Home Page">
         <t t-call="website.layout">
             <span class="hidden" id="active_link">0,1</span>
@@ -238,6 +240,75 @@
 
               <hr/>                                    
             </div>
+        </t>
+    </template>
+
+
+
+    <template id="accountvendorlanding" name="Vendor Landing Page">
+        <t t-call="website.layout">
+            
+            <div class="col-xs-12 text-center">
+                <h2>
+                    Data gathered will be used to determine whether they need to go through the privacy assessment.
+                </h2>
+
+                <h4>
+                    <em>
+                        If you want to go through the screening process as required by your client
+                        Initial screening is Php 5,000 - 
+                        Please pay thru the following options:
+                    </em>
+                </h4>
+
+                
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-sm-offset-3 top-20" style="margin-top:20px;">
+                <div class="col-xs-6">
+                    <a><img src="/psvalliance/static/src/img/bdo.png" class="col-xs-12 img-thumbnail" /></a>
+                </div>
+                <div class="col-xs-6">
+                    <a><img src="/psvalliance/static/src/img/paypal.png" class="col-xs-12 img-thumbnail" /></a>
+                </div>
+            </div>
+
+            <div class="col-xs-12 text-center " style="margin-top:20px;">
+                <a href=""><button class="btn btn-primary orangetext">Agree</button></a>
+                <a href="/my/homepage"><button class="btn btn-default">Disagree</button></a>
+            </div>
+
+            <!--<t t-foreach="clients" t-as="client">
+                <div>
+                    <h1 t-field="client.survey_link1">
+                    </h1>
+                </div>
+            </t>-->
+
+            <!--<t t-foreach="partners" t-as="partner">
+                <div>
+                    <h1 t-field="partner.partner_id">
+                    </h1>
+                </div>
+            </t>-->
+
+            <!--<h1 t-field="user_id"></h1>-->
+
+        </t>
+    </template>
+
+
+
+    <template id="vendorhomepage" name="Vendor Homepage">
+        <t t-call="website.layout">
+            <t t-foreach="partners" t-as="partner">
+                <div>
+                    <h1 t-field="partner.name">
+                      <small t-field="partner.clients">
+                      </small>
+                    </h1>
+                </div>
+            </t>
         </t>
     </template>
 
