@@ -14,7 +14,6 @@
                             <field name="company_name"/>
                             <field name="company_address"/>
                             <field name="contact_person"/>
-                            <field name="c_id"/>
                         </group>
                     </page>
                 </notebook>

@@ -25,6 +25,9 @@
                             <h1>
                                 <field name="name" placeholder="eg: Juan Dela Cruz" required="1" />
                             </h1>
+                            <h3> 
+                                <field name="company_id" placeholder="Company" /> 
+                            </h3> 
                         </div>
                         <group>
                             <field name="client_id" colspan="4"/>
@@ -34,28 +37,30 @@
                             <page string="General Information">
                                 <group>
                                     <field name="active"/>
-                                    <field name="phone" placeholder="e.g.506 5555 5555"/>
-                                    <field name="mobile" />
+                                    <field name="phone" placeholder="e.g.506 5555 5555" required="1"/>
+                                    <field name="mobile" required="1"/>
                                     <field name="fax"/>
-                                    <field name="email" widget="email" />
+                                       <field name="user_ids" invisible="1"/>
+                                    <field name="email" widget="email" attrs="{'required': [('user_ids','!=', [])]}"/>
                                 </group>
                                 <group>
                                     <label for="street" string="Address"/>
                                     <div>
                                         <!--<field name="use_parent_address" invisible="1"/>-->
-                                        <field name="address" placeholder=""/>
+                                        <field name="street" placeholder="Street..."/>
+                                        <field name="street2" />
+                                        <div class="address_format">
+                                            <field name="city" placeholder="City" style="width: 40%%" />
+                                            <field name="state_id" class="no_button" placeholder="State" style="width: 37%%" options='{"no_open": True}' />
+                                            <field name="zip" placeholder="ZIP" style="width: 20%%" />
+                                        </div>
+                                        <field name="country_id" placeholder="Country" class="no_button" options='{"no_open": True}' />
                                     </div>
                                 </group>
                             </page>
                             <page string="Vendors">
                                 <group>
                                     <field name="vendors"/>
-                                </group>
-                            </page>
-                            <page string="Surveys">
-                                <group>
-                                    <field name="survey_link1"/>
-                                    <field name="survey_link2"/>
                                 </group>
                             </page>
                         </notebook>

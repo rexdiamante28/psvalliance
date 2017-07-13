@@ -12,7 +12,6 @@ import logging
 _logger = logging.getLogger(__name__)
 
 
-
 class psvalliance(http.Controller):
     @http.route('/services', type='http', auth="public", website=True)
     def principal(self):
@@ -25,7 +24,6 @@ class psvalliance(http.Controller):
         #env = request.env(context=dict(request.env.context, show_address=True, no_tag_br=True))
         # Render page
         return request.render("psvalliance.homepage", {})
-
 
 
     @http.route('/page/signup', type='http', auth="public", website=True)
@@ -90,49 +88,5 @@ class psvalliance(http.Controller):
         #env = request.env(context=dict(request.env.context, show_address=True, no_tag_br=True))
         # Render page
     #    return request.render("psvalliance.homepage", {})
-
-
-    @http.route('/accountvendorlanding', type='http', auth="public", website=True)
-    def vendorlandingpage(self):
-        #env = request.env(context=dict(request.env.context, show_address=True, no_tag_br=True))
-        # Render page
-
-        #parnters = http.request.env['res.partners'].sudo()
-        #partners = partners.search([['id', '=', '1']])
-
-        #clients = http.request.env['psvalliance.clients'].sudo()
-        #clients = clients.search([])
-
-        #values = {
-            #'clients': clients,
-            #'curruser': partners
-        #}
-
-
-        partners = http.request.env['res.users'].sudo()
-        partners = partners.search([['id', '=', http.request.uid]])
-
-
-        values = {
-            'partners': partners,
-        }
-
-        return request.render("psvalliance.accountvendorlanding", values)
-
-
-
-    @http.route('/vendorpage', type='http', auth="public", website=True)
-    def vendorpage(self):
-        #env = request.env(context=dict(request.env.context, show_address=True, no_tag_br=True))
-        # Render page
-
-        partners = http.request.env['res.partner'].sudo()
-        partners = partners.search([['customer', '=', True]])
-
-        values = {
-            'partners': partners,
-        }
-
-        return request.render("psvalliance.vendorhomepage", values)
 
 # vim :et:
