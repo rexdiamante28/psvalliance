@@ -4,11 +4,18 @@
 
 
     <template id="customlayout" name="custom layout">
-        <h1>Thhis is a custom layout</h1>
-        <main>
-            <t t-raw="0"/>
-        </main>
+        <t t-call="website.layout">
+            <div class="col-xs-12 top-20" >
+                <a href="/engagements" class="btn btn-default ">Engagements</a>
+                <a href="/auditrequest" class="btn btn-default">Audit Requests</a>
+            </div>
+            <main>
+                <t t-raw="0"/>
+            </main>
+        </t>
     </template>
+
+  
 
     <template id="homepage" name="Home Page">
         <t t-call="website.layout">
@@ -240,6 +247,308 @@
             </div>
         </t>
     </template>
+
+
+
+    <template id="screeningpreview" name="Sreening preview">
+        <t t-call="website.layout">
+            
+            <div class="col-xs-12 text-center">
+                <h2>
+                    Data gathered will be used to determine whether you need to go through the privacy assessment.
+                </h2>
+
+                <h4>
+                    <em>
+                        If you want to go through the screening process as required by your client
+                        Initial screening is Php 5,000 - 
+                        Please pay thru the following options:
+                    </em>
+                </h4>
+
+                
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-sm-offset-3 top-20" style="margin-top:20px;">
+                <div class="col-xs-6">
+                    <a><img src="/psvalliance/static/src/img/bdo.png" class="col-xs-12 img-thumbnail" /></a>
+                </div>
+                <div class="col-xs-6">
+                    <a><img src="/psvalliance/static/src/img/paypal.png" class="col-xs-12 img-thumbnail" /></a>
+                </div>
+            </div>
+
+            <div class="col-xs-12 text-center " style="margin-top:20px;">
+                <a t-attf-href="{{surveylink}}" class="btn btn-primary">Agree</a>
+                <a href="/engagements"><button class="btn btn-default">Disagree</button></a>
+            </div>
+
+        </t>
+    </template>
+
+
+
+    <template id="vendorhomepage" name="Vendor Homepage">
+        <t t-call="psvalliance.customlayout">
+            <t t-foreach="partners" t-as="partner">
+                <div>
+                    <h1 t-field="partner.name">
+                      <small t-field="partner.clients">
+                      </small>
+                    </h1>
+                </div>
+            </t>
+        </t>
+    </template>
+
+
+    <template id="engagements_template" name="Engagements Template">
+        <t t-call="psvalliance.customlayout">
+            <div class="col-xs-12 col-sm-4 col-sm-offset-4" style="margin-top:20px;margin-bottom:10px;">
+                <p class="alert alert-danger" t-if="error">
+                    <t t-esc="error"/>
+                </p>
+
+                <p class="alert alert-success" t-if="success">
+                    <t t-esc="success"/>
+                </p>
+
+                <form method="post" action="/engagements">
+                         <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                         <div class="col-sm-12">
+                            <div class="form-group">
+                               <input type="text" class="form-control" name="clientId" placeholder="Client ID:" />
+                            </div>
+                         </div>
+                         
+                         <div class="col-xs-12">
+                           <div class="form-group">
+                               <button type="submit" class="btn btn-block btn-primary " style="background-color: #94133B;">SUBMIT</button>
+                           </div>
+                         </div>
+                </form>
+
+                <br/>
+
+                <div class="col-xs-12">
+                    <a href="/auditrequest">Request for audit of gap remediation</a>
+                </div>
+
+
+
+            </div>
+            <div class="col-xs-12">
+                <div class="row">
+                    <div class="table-responsive">
+                        <table class="table table-hover table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Client</th>
+                                    <th>Initial Screening</th>
+                                    <th>Follow Up Screening</th>
+                                    <th>Payment</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-foreach="psv_engagements" t-as="psv_engagement">
+                                    <tr>
+                                        <td>
+                                            <label t-field="psv_engagement.psv_client"></label>
+                                        </td>
+                                        <td>
+                                            <t t-if="psv_engagement.remark1 == 'n/a'">
+                                                <form method="post" action="/screeningpreview">
+                                                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                                                        <div class="col-sm-12 hidden">
+                                                           <div class="form-group">
+                                                              <input type="text" class="form-control" name="surveylink" t-att-value="psv_engagement.survey_link1" />
+                                                           </div>
+                                                        </div>
+                                                         
+                                                        <div class="col-xs-12">
+                                                          <div class="form-group">
+                                                              <button type="submit" class="btn btn-xs btn-primary " style="background-color: #94133B;">Take Initial Screening</button>
+                                                          </div>
+                                                        </div>
+                                                </form>
+                                            </t>
+                                            <t t-if="psv_engagement.paid">
+                                                <label t-field="psv_engagement.remark1"></label>
+                                            </t>
+                                            <t t-if="not psv_engagement.paid and psv_engagement.remark1 != 'n/a'">
+                                                <label>Pending Payment</label>
+                                            </t>
+                                        </td>
+                                        <td>
+                                            <t t-if="psv_engagement.remark2 == 'n/a' and psv_engagement.remark1 == 'with_risk' ">
+                                                <form method="post" action="/screeningpreview">
+                                                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                                                        <div class="col-sm-12 hidden">
+                                                           <div class="form-group">
+                                                              <input type="text" class="form-control" name="surveylink" t-att-value="psv_engagement.survey_link2" />
+                                                           </div>
+                                                        </div>
+                                                         
+                                                        <div class="col-xs-12">
+                                                          <div class="form-group">
+                                                              <button type="submit" class="btn btn-xs btn-primary " style="background-color: #94133B;">Take Folow-up Screening</button>
+                                                          </div>
+                                                        </div>
+                                                </form>
+                                            </t>
+                                            <t t-if="psv_engagement.paid and psv_engagement.remark2 != 'n/a'">
+                                                <label t-field="psv_engagement.remark2"></label>
+                                            </t>
+                                            <t t-if="not psv_engagement.paid and psv_engagement.remark2 != 'n/a'">
+                                                <label>Pending Payment</label>
+                                            </t>
+                                        </td>
+                                        <td>
+                                            <t t-if="not psv_engagement.paid">
+                                                <form method="post" action="/paymentproof">
+                                                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                                                        <div class="col-sm-12 hidden">
+                                                           <div class="form-group">
+                                                              <input type="text" class="form-control" name="engagementid" t-att-value="psv_engagement.id" />
+                                                           </div>
+                                                        </div>
+                                                         
+                                                        <div class="col-xs-12">
+                                                          <div class="form-group">
+                                                              <t t-if="not psv_engagement.proof">
+                                                                  <button type="submit" class="btn btn-xs btn-primary " style="background-color: #94133B;">Upload proof of payment</button>
+                                                              </t>
+                                                              <t t-if="psv_engagement.proof">
+                                                                  <button type="submit" class="btn btn-xs btn-primary " style="background-color: #94133B;">Re-upload proof of payment</button>
+                                                              </t>
+                                                          </div>
+                                                        </div>
+                                                </form>
+                                            </t>
+                                            <t t-if="psv_engagement.paid">
+                                                <label>Paid</label>
+                                            </t>
+                                        </td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+
+    <template id="auditrequest" name="Audit Request">
+        <t t-call="psvalliance.customlayout">
+            <div class="col-xs-12 col-sm-4 col-sm-offset-4" style="margin-top:30px;margin-bottom:10px;">
+                <p class="alert alert-danger" t-if="error">
+                    <t t-esc="error"/>
+                </p>
+
+                <p class="alert alert-success" t-if="success">
+                    <t t-esc="success"/>
+                </p>
+
+                <form method="post" action="/auditrequest">
+                         <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                         <div class="col-sm-12">
+                            <div class="form-group">
+                               <input type="text" class="form-control" name="clientId" placeholder="Client ID:" />
+                            </div>
+                         </div>
+
+                         <div class="col-sm-12">
+                            <div class="form-group">
+                               <input type="date" class="form-control" name="auditdate"  />
+                            </div>
+                         </div>
+                         
+                         <div class="col-xs-12">
+                           <div class="form-group">
+                               <button type="submit" class="btn btn-block btn-primary " style="background-color: #94133B;">SUBMIT</button>
+                           </div>
+                         </div>
+                </form>
+            </div>
+
+
+            <div class="col-xs-12">
+                <div class="row">
+                    <div class="table-responsive">
+                        <table class="table table-hover table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Client</th>
+                                    <th>Date Requested</th>
+                                    <th>Status</th>
+                                    <th>Remarks</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-foreach="audit_requests" t-as="audit_request">
+                                    <tr>
+                                        <td>
+                                            <label t-field="audit_request.psv_client"></label>
+                                        </td>
+                                        <td>
+                                            <label t-field="audit_request.date_requested"></label>
+                                        </td>
+                                        <td>
+                                            <label t-field="audit_request.status"></label>
+                                        </td>
+                                        <td>
+                                            <label t-field="audit_request.remarks"></label>
+                                        </td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </t>
+    </template>
+
+
+    <template id="proof_of_payment" name="Proof of Payment">
+        <t t-call="psvalliance.customlayout">
+            <div class="col-xs-12 col-sm-4 col-sm-offset-4" style="margin-top:30px;margin-bottom:10px;">
+                <p class="alert alert-danger" t-if="error">
+                    <t t-esc="error"/>
+                </p>
+
+                <p class="alert alert-success" t-if="success">
+                    <t t-esc="success"/>
+                </p>
+
+                <form method="post" action="/paymentproofupload" enctype="multipart/form-data">
+                         <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                         <div class="col-sm-12 hidden">
+                            <div class="form-group">
+                               <input type="text" class="form-control" name="engagementid" t-att-value="engagementid" />
+                            </div>
+                         </div>
+
+                         <div class="col-sm-12">
+                            <div class="form-group">
+                               <input type="file" name="file_proof"  />
+                            </div>
+                         </div>
+                         
+                         <div class="col-xs-12">
+                           <div class="form-group">
+                               <button type="submit" class="btn btn-block btn-primary " style="background-color: #94133B;">SUBMIT</button>
+                           </div>
+                         </div>
+                </form>
+            </div>
+
+        </t>
+    </template>
+
 
 
 </data>

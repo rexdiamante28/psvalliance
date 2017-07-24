@@ -13,15 +13,6 @@
                   sequence="1" />
 
 
-                  <!--Measurement Requests-->
-                        <menuitem id="subscribers"
-                                  name="Subscribers"
-                                  parent="general"
-                                  sequence="2"
-                                  action="subscribers_action" />
-
-
-
                   <!--Clients-->
                         <menuitem id="clients"
                                   name="Clients"
@@ -35,6 +26,23 @@
                                   parent="general"
                                   sequence="2"
                                   action="vendors_action" />
+
+
+
+                  <!--Clients-->
+                        <menuitem id="engagements"
+                                  name="Client - Vendor Egagements"
+                                  parent="general"
+                                  sequence="2"
+                                  action="engagements_action" />
+
+
+                        <menuitem id="auditgap"
+                                  name="Remediation Requests"
+                                  parent="general"
+                                  sequence="2"
+                                  action="audit_reuests_action" />
+
 
                         
 

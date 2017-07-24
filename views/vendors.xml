@@ -10,12 +10,13 @@
                 <notebook position="inside">
                     <page string="PSV Details">
                         <group>
-                            <field name="clients"/>
                             <field name="company_name"/>
                             <field name="company_address"/>
                             <field name="contact_person"/>
+                            <field name="psv_assigment"/>
                         </group>
                     </page>
+
                 </notebook>
             </field>
         </record>
