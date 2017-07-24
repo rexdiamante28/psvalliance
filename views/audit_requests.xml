@@ -1,0 +1,58 @@
+<odoo>
+	<data>
+
+		<record model="ir.actions.act_window" id="audit_reuests_action">
+            <field name="name">Vendor_client_engagement</field>
+            <field name="res_model">psvalliance.auditrequests</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Create audit request</p>
+            </field>
+        </record>
+
+     	<record model="ir.ui.view" id="audit_reuests_form_view">
+            <field name="name">audit_reuests.form</field>
+            <field name="model">psvalliance.auditrequests</field>
+            <field name="arch" type="xml">
+                <form string="Proof of Payment Form">
+                    <sheet>
+                        <group string="Involved">
+                            <field name="psv_client" />
+                            <field name="psv_vendor" />
+                        </group>
+                        <group string="Status">
+                            <field name="status" />
+                            <field name="remarks" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="audit_reuests_tree_view">
+            <field name="name">audit_reuests.tree</field>
+            <field name="model">psvalliance.auditrequests</field>
+            <field name="arch" type="xml">
+               <tree string="Proof of Payment">
+                    <field name="psv_client" />
+                    <field name="psv_vendor" />
+                    <field name="status" />
+               </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="audit_reuests_search_view">
+            <field name="name">audit_reuests.search</field>
+            <field name="model">psvalliance.auditrequests</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="psv_client" />
+                    <field name="psv_vendor" />
+                    <field name="status" />
+                </search>
+            </field>
+        </record>
+
+	</data>
+</odoo>

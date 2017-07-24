@@ -1,0 +1,65 @@
+<odoo>
+	<data>
+
+		<record model="ir.actions.act_window" id="engagements_action">
+            <field name="name">Vendor_client_engagement</field>
+            <field name="res_model">psvalliance.engagements</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Create your client-vendor engagement</p>
+            </field>
+        </record>
+
+     	<record model="ir.ui.view" id="engagements_form_view">
+            <field name="name">engagements.form</field>
+            <field name="model">psvalliance.engagements</field>
+            <field name="arch" type="xml">
+                <form string="Proof of Payment Form">
+                    <sheet>
+                        <group string="Status">
+                            <field name="proof" widget="image"/>
+                            <field name="paid" />
+                        </group>
+                        <group string="Involved">
+                            <field name="psv_client" />
+                            <field name="psv_vendor" />
+                        </group>
+                        <group string="Initial Screening">
+                            <field name="survey_link1" />
+                            <field name="remark1" />
+                        </group>
+                        <group string="Secondary Screening">
+                            <field name="survey_link2" />
+                            <field name="remark2" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="engagements_tree_view">
+            <field name="name">engagements.tree</field>
+            <field name="model">psvalliance.engagements</field>
+            <field name="arch" type="xml">
+               <tree string="Proof of Payment">
+                    <field name="psv_client" />
+                    <field name="psv_vendor" />
+                    <field name="paid" />
+               </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="engagements_search_view">
+            <field name="name">engagements.search</field>
+            <field name="model">psvalliance.engagements</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="psv_client" />
+                    <field name="psv_vendor" />
+                </search>
+            </field>
+        </record>
+
+	</data>
+</odoo>
